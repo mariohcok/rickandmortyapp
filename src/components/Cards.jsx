@@ -1,8 +1,10 @@
 import Card from './Card';
+import styles from "../styles/Cards.module.css"
+
 
 export default function Cards({ characters }) {
    return (
-    <div>{
+    <div className={styles.mainDiv}>{
 
       characters.map(({id, name, status, species, gender, origin, image }) => {
         return(
@@ -22,4 +24,4 @@ export default function Cards({ characters }) {
       }
     </div>
   )
-} 
+}

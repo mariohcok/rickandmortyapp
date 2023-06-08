@@ -1,0 +1,11 @@
+.mainDiv {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    position: relative;
+    margin-top: 45px;
+    overflow: hidden;
+    justify-content: space-around;
+
+}
