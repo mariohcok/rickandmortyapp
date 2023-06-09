@@ -1,5 +1,8 @@
 import styles from '../styles/Card.module.css'
-export default function Card({id, name, status, species, gender, origin, image, onclose}) {
+
+
+export default function Card(
+  {id, name, status, species, gender, origin, image, onClose}) {
 
    return (
 
@@ -7,24 +10,23 @@ export default function Card({id, name, status, species, gender, origin, image, 
   <div className={styles.flipCard}>
 
     <div className={styles.cardFront}>
-    <button className={styles.btn} onClick={onclose}>X</button>
-      <figure>
-        <div className={styles.imgBg}></div>
-        <img src={image} alt="character"/>
-        <figcaption>{name}</figcaption>
-      </figure>
+      <button className={styles.btn} onClick={onClose}>X</button>
+        <figure>
+          <div className={styles.imgBg}></div>
+          <img src={image} alt="character"/>
+          <figcaption>{name}</figcaption>
+        </figure>
 
-      <ul>
-        <li>{status}</li>
-        <li>{species}</li>
-        <li>{gender}</li>
-        <li>{origin.name}</li>
-        <li>{}</li>
-      </ul>
+          <ul>
+            <li>Status: {status}</li>
+            <li>Species: {species}</li>
+            <li>Origin: {origin.name}</li>
+            <li>Gender: {gender}</li>
+          </ul>
     </div>
 
     <div className={styles.cardBack}>
-    <button className={styles.btn} onClick={onclose}>X</button>
+    <button className={styles.btn} onClick={onClose}>X</button>
       <figure>
         <div className={styles.imgBg}></div>
         <img src={image} alt="character"/>
