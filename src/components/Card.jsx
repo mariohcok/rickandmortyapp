@@ -2,7 +2,7 @@ import styles from '../styles/Card.module.css'
 
 
 export default function Card(
-  {id, name, status, species, gender, origin, image, onClose}) {
+  {name, id, status, species, gender, origin, image, onClose}) {
 
    return (
 
@@ -10,7 +10,7 @@ export default function Card(
   <div className={styles.flipCard}>
 
     <div className={styles.cardFront}>
-      <button className={styles.btn} onClick={onClose}>X</button>
+      <button className={styles.btn} onClick={()=> {onClose(id)}}>X</button>
         <figure>
           <div className={styles.imgBg}></div>
           <img src={image} alt="character"/>
@@ -26,24 +26,25 @@ export default function Card(
     </div>
 
     <div className={styles.cardBack}>
-    <button className={styles.btn} onClick={onClose}>X</button>
-      <figure>
-        <div className={styles.imgBg}></div>
-        <img src={image} alt="character"/>
-      </figure>
+      <button className={styles.btn} onClick={()=> {onClose(id)}}>X</button>
+        <figure>
+          <div className={styles.imgBg}></div>
+          <img src={image} alt="character"/>
+          <figcaption>{name}</figcaption>
+        </figure>
 
-      <button>Detalle</button>
+        <button>Detalle</button>
 
-      <div className={styles.designContainer}>
-        <span className={styles.designUno}></span>
-        <span className={styles.designDos}></span>
-        <span className={styles.designTres}></span>
-        <span className={styles.designCuatro}></span>
-        <span className={styles.designCinco}></span>
-        <span className={styles.designSeis}></span>
-        <span className={styles.designSiete}></span>
-        <span className={styles.designOcho}></span>
-      </div>
+        <div className={styles.designContainer}>
+          <span className={styles.designUno}></span>
+          <span className={styles.designDos}></span>
+          <span className={styles.designTres}></span>
+          <span className={styles.designCuatro}></span>
+          <span className={styles.designCinco}></span>
+          <span className={styles.designSeis}></span>
+          <span className={styles.designSiete}></span>
+          <span className={styles.designOcho}></span>
+        </div>
     </div>
 
   </div>
