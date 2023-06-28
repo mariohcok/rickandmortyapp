@@ -2,6 +2,7 @@ import React from 'react'
 import SearchBar from './SearchBar.jsx'
 import styles from '../styles/Nav.module.css'
 import image from '../image/rymcircle.gif'
+import { Link } from 'react-router-dom'
 
 const Nav = ({onSearch, random}) => {
   return (
@@ -60,10 +61,19 @@ const Nav = ({onSearch, random}) => {
 // Nav Cande
   <nav className={styles.menuContainer}>
     <img className={styles.menuLogo}
-    src={image}
-    alt=''
-    width='20%'
+      src={image}
+      alt=''
+      width='20%'
     />
+      <Link to={"/home"} style={{ textDecoration: 'none', color: 'white' }}>
+        Home
+      </Link>
+      <Link to={"/About"} style={{ textDecoration: 'none', color: 'white' }}>
+        About
+      </Link>
+      <Link to={"/detail:id"} style={{ textDecoration: 'none', color: 'white' }}>
+        Detail
+      </Link>
       <SearchBar onSearch={onSearch} random={random}/>
   </nav>
 

@@ -1,7 +1,12 @@
 import { useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Cards from './components/Cards.jsx';
-import Nav from './components/Nav';
+import Nav from './components/Nav.jsx';
+import Form from './components/Form.jsx'
+import About from './views/About.jsx';
+import Detail from './views/Detail.jsx'
+import Error from './views/Error.jsx';
 import './App.css';
 
 
@@ -39,10 +44,20 @@ function App() {
       setCharacters(characters.filter((character) => character.id !== Number(id)))
    };
 
+   const { pathname } = useLocation();
+
    return (
       <div className='App'>
-         <Nav onSearch={onSearch} random={random}/>
-         <Cards characters={characters} onClose={onClose}/>
+         {
+            pathname !== '/' && <Nav onSearch={onSearch} random={random}/>
+         }         
+         <Routes>
+            <Route path='/' element={<Form />}/>
+            <Route path='home' element={<Cards characters={characters} onClose={onClose}/>}/>
+            <Route path='about' element={<About/>}/>
+            <Route path='/detail/:id' element={<Detail />}></Route>
+            <Route path='*' element={<Error />}/>
+         </Routes>
       </div>
    );
 }

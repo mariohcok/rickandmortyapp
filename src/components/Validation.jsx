@@ -1,0 +1,25 @@
+ const validation = (data) => {
+    let errors = {};
+
+    if(!data.email.includes('@')){
+        errors.el = 'Ingresa un email valido'
+    }
+    if(!data.email){
+        errors.e2 = 'Ingresa un email'
+    }
+
+    if(data.email.length > 35) {
+        errors.e3 = 'No debe ser mayor a 35 caracteres'
+    }
+
+    if(!/\d+/.test){
+        errors.p1 = 'Al menos un número'
+    }
+    if(data.password.length < 6 || data.password.length > 10) {
+        errors.p2 = 'Debe tener entre 6 y 10 '
+    }
+    return errors;
+
+    }
+
+    export default validation;

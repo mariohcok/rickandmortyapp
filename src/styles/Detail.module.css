@@ -1,0 +1,61 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #37addb2f;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  
+}
+.container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #f5eeee;
+  }
+  
+.container p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f7f5f5;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+.container h2 {
+      font-size: 24px;
+    }
+  
+.container p {
+      font-size: 16px;
+    }
+  }
+
+  .btn {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    color: #222;
+    padding: 10px;
+    background: #fddb33;
+    cursor: pointer;
+    font-weight: bold;
+    width: 250px;
+    height: 40px;
+    font-family: "Nunito", sans-serif;
+    box-shadow: 1px 1px 10px 0px #2222222b;
+    transition: 0.2s all;
+    &:hover {
+      box-shadow: 1px 1px 1px 0px #2222222b;
+    }
+    &:focus,
+    &:active {
+      outline: 0;
+      box-shadow: 1px 1px 10px 0px #22222280;
+    }
+  }
