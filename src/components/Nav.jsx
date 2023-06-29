@@ -71,9 +71,6 @@ const Nav = ({onSearch, random, logout}) => {
       <Link to={"/About"} style={{ textDecoration: 'none', color: 'white' }}>
         About
       </Link>
-      <Link to={"/detail:id"} style={{ textDecoration: 'none', color: 'white' }}>
-        Detail
-      </Link>
       <Link style={{ textDecoration: 'none', color: 'white' }} onClick={logout}>Logout</Link>
       <SearchBar onSearch={onSearch} random={random}/>
   </nav>
