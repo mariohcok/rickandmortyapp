@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import validation from './Validation.jsx'
 import styles from '../styles/Form.module.css'
 
-const Form = () => {
+const Form = (props) => {
     const [userData, setUserData] = useState({
         email: '',
         password:''
@@ -13,7 +13,15 @@ const Form = () => {
         setErrors(validation({...userData, [e.target.name]: e.target.value}))
     };
 
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({
+      email:'',
+      password:''
+    });
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      props.login(userData);
+    }
 
   return (
 <section>
@@ -278,16 +286,16 @@ const Form = () => {
 <span></span>
 <span></span>
 
-<form className={styles.signin}>
+<form className={styles.signin} onSubmit={handleSubmit}>
   <div className={styles.content}>
     <h2>Sign In</h2>
     <div className={styles.form}>
       <div className={styles.inputBox}>
         <input 
-        type="text" required 
+        type="text" 
         name='email'
         onChange={handleChange}
-        value={userData.email}/>
+        value={userData.email} required/>
         <i>Email</i>
       </div>
       {
@@ -297,10 +305,10 @@ const Form = () => {
         }    
       <div className={styles.inputBox}>
         <input 
-        type="password" required 
+        type="password"  
         name='password'
         onChange={handleChange}
-        value={userData.password}/>
+        value={userData.password} required/>
         <i>Password</i>
       </div>
       {

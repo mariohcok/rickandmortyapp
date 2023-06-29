@@ -4,7 +4,7 @@ import styles from '../styles/Nav.module.css'
 import image from '../image/rymcircle.gif'
 import { Link } from 'react-router-dom'
 
-const Nav = ({onSearch, random}) => {
+const Nav = ({onSearch, random, logout}) => {
   return (
 //     <nav className={styles.menuContainer}>
 //   {/* <!-- burger menu --> */}
@@ -74,6 +74,7 @@ const Nav = ({onSearch, random}) => {
       <Link to={"/detail:id"} style={{ textDecoration: 'none', color: 'white' }}>
         Detail
       </Link>
+      <Link style={{ textDecoration: 'none', color: 'white' }} onClick={logout}>Logout</Link>
       <SearchBar onSearch={onSearch} random={random}/>
   </nav>
 
