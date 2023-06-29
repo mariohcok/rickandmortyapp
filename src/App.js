@@ -64,19 +64,19 @@ function App() {
    };
 
    const { pathname } = useLocation();
-   const allowedRoutes = [ '/home', '/about'];
+   const allowedRoutes = [ '/home', '/about', '/detail/:id'];
 
    return (
       <div className='App'>
          {
             allowedRoutes.includes(pathname) && <Nav onSearch={onSearch} random={random} logout={logout}/>
-         }          
+         }         
          <Routes>
-            <Route path='/' element={<Form login={login}/>}/>
-            <Route path='home' element={<Cards characters={characters} onClose={onClose}/>}/>
-            <Route path='about' element={<About/>}/>
-            <Route path='/detail/:id' element={<Detail />}/>
-            <Route exact path='*' element={<Error />}/>
+            <Route path='/' element={<Form  login={login}/>} />
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/detail/:id' element={<Detail />} />
+            <Route path='*' element={<Error />} />
          </Routes>
       </div>
    );
